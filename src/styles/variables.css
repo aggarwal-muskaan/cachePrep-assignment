@@ -1,7 +1,10 @@
 :root {
   --white-text: #fff;
   --grey-color: #202224;
+  --grey-color: #2e3134;
   --black-color: #121212;
-  --blue-button: rgb(7, 154, 160);
+  --blue-button: rgb(48, 145, 148);
+  /* --blue-button: #3b429f; */
   --yellow-stars: hsl(47, 100%, 42%);
+  --font-merri: "Merriweather", serif;
 }

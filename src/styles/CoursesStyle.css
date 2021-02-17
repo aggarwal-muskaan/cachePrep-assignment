@@ -1,0 +1,95 @@
+@import "./variables.css";
+.container {
+  background-color: var(--black-color);
+  padding: 3rem 1.5rem;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 90%);
+  grid-gap: 2.5rem;
+  justify-content: center;
+}
+
+.container-heading {
+  color: var(--yellow-stars);
+  margin: 0;
+}
+
+.card {
+  box-sizing: border-box;
+  width: auto;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  background-color: var(--grey-color);
+  color: var(--white-text);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  /* height: 320px; */
+  /* max-height: 320px; */
+}
+
+.card-title h3,
+h5,
+.card-button h3,
+.card-info p,
+.card-footer h5 {
+  margin: 0;
+}
+
+.card-title h5 {
+  /* .card-info p  */
+  color: var(--yellow-stars);
+}
+
+.card-info ul {
+  padding-left: 20px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.card-info p {
+  font-size: 14px;
+}
+
+.card-footer {
+  margin: 1rem 0rem;
+  display: flex;
+  font-size: 13px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 300px;
+}
+
+.card-footer h5 {
+  display: inline-block;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-bottom {
+  align-self: center;
+}
+.card-button {
+  padding: 0.5rem 2rem;
+  background-color: var(--blue-button);
+  color: var(--white-text);
+  border: none;
+  border-radius: 7px;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 50%);
+    padding: 3rem 3rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    grid-template-columns: repeat(3, 30%);
+  }
+}

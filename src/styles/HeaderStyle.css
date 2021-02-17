@@ -1,0 +1,10 @@
+@import "./variables.css";
+
+.Header {
+  padding: 0 5rem;
+  background-color: var(--grey-color);
+  color: var(--white-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

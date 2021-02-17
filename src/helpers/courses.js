@@ -1,0 +1,65 @@
+/* eslint-disable */
+
+// packages from database
+export default [
+  {
+    packageId: 1,
+    packageName: "Data Science Crash Course",
+    packageDomain: "Data Science",
+    content: [
+      "100+ Practice Questions",
+      "2 Projects",
+      "5 Mocks",
+      "4 Expert Sessions",
+    ],
+    mentorName: "Brian Holt",
+    ratings: 4,
+    currentllyEnrolled: 1698,
+    status: "Enroll",
+  },
+  {
+    packageId: 2,
+    packageName: "Business Communication",
+    packageDomain: "Human Resources",
+    content: [
+      "100+ Practice Questions",
+      "Case Studies",
+      "5 Mocks",
+      "4 Expert Sessions",
+    ],
+    mentorName: "Brian Holt",
+    ratings: 4,
+    currentllyEnrolled: 1698,
+    status: "Enroll",
+  },
+  {
+    packageId: 3,
+    packageName: "Innovation Leadership",
+    packageDomain: "Product Management",
+    content: ["100+ Practice Questions", "2 Projects", "1 Expert Session"],
+    mentorName: "Brian Holt",
+    ratings: 3.4,
+    currentllyEnrolled: 1698,
+    status: "Enroll",
+  },
+  {
+    packageId: 4,
+    packageName: "Data Science Crash Course",
+    packageDomain: "Data Science",
+    content: ["1000+ Practice Questions", "2 Projects", "5 Mocks"],
+    mentorName: "Brian Holt",
+    ratings: 5,
+    currentllyEnrolled: 1698,
+    status: "Enroll",
+  },
+  {
+    packageId: 5,
+    packageName: "Marketing",
+    packageDomain: "Human Resources",
+    content: ["100+ Practice Questions", "2 Projects", "5 Mocks Tests"],
+    mentorName: "Brian Holt",
+    ratings: 4.1,
+    currentllyEnrolled: 1698,
+    status: "Enroll",
+  },
+];

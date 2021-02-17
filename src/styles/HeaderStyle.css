@@ -1,10 +1,22 @@
 @import "./variables.css";
 
 .Header {
-  padding: 0 5rem;
+  padding: 0 2rem;
   background-color: var(--grey-color);
   color: var(--white-text);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 700px) {
+  .Header {
+    padding: 0 3.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .Header {
+    padding: 0 5rem;
+  }
 }

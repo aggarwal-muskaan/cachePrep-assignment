@@ -20,6 +20,7 @@
   padding: 2rem 1rem;
   border-radius: 10px;
   background-color: var(--grey-color);
+  /* box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2); */
   color: var(--white-text);
   position: relative;
   display: flex;

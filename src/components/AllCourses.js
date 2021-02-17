@@ -1,9 +1,15 @@
 import React from "react";
 import Rating from "@material-ui/lab/Rating";
+import Drawer from "@material-ui/core/Drawer";
+import SideMenu from "./SideMenu";
 import courses from "../helpers/courses";
+import useDrawer from "../hooks/useDrawer";
 import "../styles/CoursesStyle.css";
 
 export default function AllCourses() {
+  // custom hook
+  const [val, showDrawer] = useDrawer(false);
+
   //mapping over course data
   const printData = courses.map((c) => (
     <div className="card" key={c.packageId}>
@@ -43,7 +49,7 @@ export default function AllCourses() {
         </div>
       </div>
       <div className="card-bottom">
-        <button className="card-button">
+        <button className="card-button" onClick={() => showDrawer(true)}>
           <h3>{c.status}</h3>
         </button>
       </div>
@@ -58,6 +64,11 @@ export default function AllCourses() {
         {/* printing cards */}
         {printData}
       </div>
+
+      {/* side menu */}
+      <Drawer anchor="left" open={val} onClose={() => showDrawer(false)}>
+        <SideMenu />
+      </Drawer>
     </>
   );
 }

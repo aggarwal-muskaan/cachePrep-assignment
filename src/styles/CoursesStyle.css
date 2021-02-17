@@ -79,6 +79,12 @@ h5,
   border: none;
   border-radius: 7px;
   margin: auto;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  filter: brightness(120%);
+  transition: 0.5s ease;
 }
 
 @media (min-width: 600px) {

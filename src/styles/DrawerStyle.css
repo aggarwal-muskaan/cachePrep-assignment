@@ -2,7 +2,7 @@
 
 .Side-menu {
   width: 300px;
-  height: 600px;
+  height: 580px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,8 @@
   max-height: 180px;
   color: var(--dark-grey-color);
   border-radius: 10px;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(141, 140, 140, 0.2),
+    0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 .plan-card-duration,
@@ -40,4 +41,15 @@
 
 .plan-add-button {
   padding: 1rem;
+}
+
+.view-cart-button {
+  margin: 1rem;
+  padding: 0.4rem 0;
+  background-color: var(--yellow-stars);
+  border: none;
+  border-radius: 5px;
+  font-family: "Merriweather";
+  font-weight: 900;
+  letter-spacing: 1px;
 }

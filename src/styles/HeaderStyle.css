@@ -18,6 +18,20 @@
   transition: 1s ease;
 }
 
+.Header-cart-icon a[data-count]:after {
+  position: absolute;
+  right: 5%;
+  top: 2%;
+  content: attr(data-count);
+  font-size: 80%;
+  padding: 0.2em;
+  border-radius: 50%;
+  line-height: 1em;
+  color: white;
+  background: var(--blue-button);
+  text-align: center;
+  min-width: 1em;
+}
 @media (min-width: 700px) {
   .Header {
     padding: 0 3.5rem;

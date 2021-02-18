@@ -49,7 +49,10 @@ export default function AllCourses() {
         </div>
       </div>
       <div className="card-bottom">
-        <button className="card-button" onClick={() => showDrawer(true)}>
+        <button
+          className="card-button"
+          onClick={() => showDrawer(true, c.packageId)}
+        >
           <h3>{c.status}</h3>
         </button>
       </div>
@@ -66,8 +69,8 @@ export default function AllCourses() {
       </div>
 
       {/* side menu */}
-      <Drawer anchor="left" open={val} onClose={() => showDrawer(false)}>
-        <SideMenu />
+      <Drawer anchor="left" open={val.open} onClose={() => showDrawer(false)}>
+        <SideMenu courseId={val.courseId} />
       </Drawer>
     </>
   );

@@ -52,4 +52,11 @@
   font-family: "Merriweather";
   font-weight: 900;
   letter-spacing: 1px;
+  width: 268px;
+  cursor: pointer;
+}
+
+.view-cart-button:hover {
+  opacity: 0.8;
+  transition: 0.4s ease;
 }

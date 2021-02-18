@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { dispatchContext } from "../contexts/cart.context";
 import plans from "../helpers/plans";
 import "../styles/DrawerStyle.css";
@@ -33,7 +34,9 @@ export default function SideMenu({ courseId }) {
           </div>
         ))}
       </div>
-      <button className="view-cart-button">View Cart</button>
+      <Link to="/checkout">
+        <button className="view-cart-button">View Cart</button>
+      </Link>
     </>
   );
 }

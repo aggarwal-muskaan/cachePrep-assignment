@@ -8,7 +8,7 @@ function reducer(state, action) {
         {
           packageId: action.id,
           packageName: action.name,
-          plan: "m3",
+          plan: 1,
         },
       ];
     case "editPlan":
@@ -24,7 +24,7 @@ function reducer(state, action) {
 
 function useCart(initialState) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //   console.log(state);
+  //   console.log(state, state.length);
   return [state, dispatch];
 }
 

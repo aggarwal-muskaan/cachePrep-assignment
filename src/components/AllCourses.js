@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { dispatchContext } from "../contexts/cart.context";
 import Rating from "@material-ui/lab/Rating";
 import Drawer from "@material-ui/core/Drawer";
 import SideMenu from "./SideMenu";
@@ -9,6 +10,15 @@ import "../styles/CoursesStyle.css";
 export default function AllCourses() {
   // custom hook
   const [val, showDrawer] = useDrawer(false);
+
+  // const state = useContext(cartContext);
+  const dispatch = useContext(dispatchContext);
+
+  //opening side menu & updating state
+  const handleClick = (id, name) => {
+    dispatch({ type: "add", id: id, name: name });
+    showDrawer(true, id);
+  };
 
   //mapping over course data
   const printData = courses.map((c) => (
@@ -51,7 +61,7 @@ export default function AllCourses() {
       <div className="card-bottom">
         <button
           className="card-button"
-          onClick={() => showDrawer(true, c.packageId)}
+          onClick={() => handleClick(c.packageId, c.packageName)}
         >
           <h3>{c.status}</h3>
         </button>

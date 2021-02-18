@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toggleContext } from "../contexts/drawer.context";
 import { dispatchContext } from "../contexts/cart.context";
 import plans from "../helpers/plans";
 import "../styles/DrawerStyle.css";
@@ -7,6 +8,13 @@ import "../styles/DrawerStyle.css";
 export default function SideMenu({ courseId }) {
   // provide method for editing subscription plans
   const dispatch = useContext(dispatchContext);
+
+  const showDrawer = useContext(toggleContext);
+
+  const handleEnroll = (planId) => {
+    showDrawer(false);
+    dispatch({ type: "editPlan", id: courseId, plan: planId });
+  };
 
   return (
     <>
@@ -23,9 +31,7 @@ export default function SideMenu({ courseId }) {
             <small className="plan-card-strike">&#8377;{p.cost}</small>
             <div className="plan-add-button">
               <button
-                onClick={() =>
-                  dispatch({ type: "editPlan", id: courseId, plan: p.id })
-                }
+                onClick={() => handleEnroll(p.id)}
                 className="card-button"
               >
                 CHOOSE

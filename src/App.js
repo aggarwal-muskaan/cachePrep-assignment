@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import { Cart } from "./contexts/cart.context";
+import { Drawer } from "./contexts/drawer.context";
 import AllCourses from "./components/AllCourses";
 import Checkout from "./components/Checkout";
 import Header from "./components/Header";
@@ -13,7 +14,15 @@ function App() {
       <Cart>
         <Header />
         <Switch>
-          <Route exact path="/" render={() => <AllCourses />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Drawer>
+                <AllCourses />
+              </Drawer>
+            )}
+          />
           <Route exact path="/checkout" render={() => <Checkout />} />
           <Redirect to="/" />
         </Switch>

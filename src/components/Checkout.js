@@ -43,15 +43,14 @@ export default function Cart() {
 
       <td colSpan="2">
         <div className="item-amount">
-          <h4>{plans[p.plan].actualCost}</h4>
-          <small>{plans[p.plan].cost}</small>
+          <h4>&#8377;{plans[p.plan].actualCost}</h4>
+          <small>&#8377;{plans[p.plan].cost}</small>
         </div>
       </td>
 
       <td>
         <FontAwesomeIcon
           icon={faTrashAlt}
-          size="1.5x"
           className="delete-icon"
           onClick={() => handleDelete(p.packageId)}
         />
@@ -74,26 +73,30 @@ export default function Cart() {
       {currentProducts.length ? (
         <div className="summary-container">
           <div className="Checkout-summary">
-            {/* <hr /> border-bottom */}
             <table className="item-bill">
-              <tr>
-                <th colSpan="5">
-                  <h3 className="heading-summary">Summary</h3>
-                </th>
-              </tr>
-              {printItems}
-              {/* <hr /> border-top */}
-              <tr className="total">
-                <td colSpan="3">
-                  <h3>Total</h3>
-                </td>
-                <td colSpan="2">
-                  <div>
-                    <h3>{userCost} </h3>
-                    <small>{baseCost}</small>
-                  </div>
-                </td>
-              </tr>
+              <thead>
+                <tr>
+                  <th colSpan="5">
+                    <h3 className="heading-summary">Summary</h3>
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>{printItems}</tbody>
+
+              <tfoot>
+                <tr className="total">
+                  <td colSpan="3">
+                    <h3>Total</h3>
+                  </td>
+                  <td colSpan="2">
+                    <div>
+                      <h3>&#8377;{userCost} </h3>
+                      <small>&#8377;{baseCost}</small>
+                    </div>
+                  </td>
+                </tr>
+              </tfoot>
             </table>
 
             <button className="card-button checkout-button">Checkout</button>

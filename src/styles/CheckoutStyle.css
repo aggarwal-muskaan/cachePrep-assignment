@@ -1,0 +1,73 @@
+@import "./variables.css";
+.Checkout {
+  text-align: center;
+}
+
+.summary-container {
+  margin: 2rem 1rem;
+  font-family: var(--font-open-sans);
+}
+
+.Checkout-summary {
+  padding: 2rem 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.Checkout-summary h3,
+h4 {
+  margin: 0;
+}
+
+.heading-summary {
+  color: var(--blue-button);
+}
+
+.item-bill {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 450px;
+}
+
+.item-bill td {
+  text-align: start;
+}
+
+.change-plan-button {
+  font-family: var(--font-open-sans);
+  border: none;
+  color: darkslateblue;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.each-item,
+.total {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+.checkout-button {
+  letter-spacing: 1px;
+  font: 700 16px var(--font-open-sans);
+}
+
+.item-amount small,
+.total small {
+  text-decoration: line-through;
+}
+
+.congrats-text {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.saved-text {
+  margin-top: 0;
+}

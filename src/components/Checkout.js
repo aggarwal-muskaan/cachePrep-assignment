@@ -102,7 +102,9 @@ export default function Cart() {
             <button className="card-button checkout-button">Checkout</button>
             <div className="congrats-text">
               <p>Congratulations!</p>
-              <p className="saved-text">You saved {baseCost - userCost}!</p>
+              <p className="saved-text">
+                You saved &#8377;{baseCost - userCost}!
+              </p>
             </div>
           </div>
 

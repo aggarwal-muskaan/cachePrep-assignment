@@ -13,19 +13,13 @@ function App() {
     <div className="App">
       <Cart>
         <Header />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <Drawer>
-                <AllCourses />
-              </Drawer>
-            )}
-          />
-          <Route exact path="/checkout" render={() => <Checkout />} />
-          <Redirect to="/" />
-        </Switch>
+        <Drawer>
+          <Switch>
+            <Route exact path="/" render={() => <AllCourses />} />
+            <Route exact path="/checkout" render={() => <Checkout />} />
+            <Redirect to="/" />
+          </Switch>
+        </Drawer>
       </Cart>
     </div>
   );

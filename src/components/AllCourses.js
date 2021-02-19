@@ -1,26 +1,23 @@
 import React, { useContext } from "react";
-import { openContext, toggleContext } from "../contexts/drawer.context";
+import { toggleContext } from "../contexts/drawer.context";
 import { dispatchContext } from "../contexts/cart.context";
 import Rating from "@material-ui/lab/Rating";
-import Drawer from "@material-ui/core/Drawer";
-import SideMenu from "./SideMenu";
+import PlansDrawer from "./Drawer";
 import courses from "../helpers/courses";
 import "../styles/CoursesStyle.css";
 
 export default function AllCourses() {
-  // custom hook
-  const val = useContext(openContext);
   const showDrawer = useContext(toggleContext);
   // const state = useContext(cartContext);
   const dispatch = useContext(dispatchContext);
 
-  //opening side menu & updating state
+  //* opening side menu & updating state
   const handleClick = (id, name) => {
     dispatch({ type: "add", id: id, name: name });
     showDrawer(true, id);
   };
 
-  //mapping over course data
+  //* mapping over course data
   const printData = courses.map((c) => (
     <div className="card" key={c.packageId}>
       <div>
@@ -79,9 +76,7 @@ export default function AllCourses() {
       </div>
 
       {/* side menu */}
-      <Drawer anchor="left" open={val.open} onClose={() => showDrawer(false)}>
-        <SideMenu courseId={val.courseId} />
-      </Drawer>
+      <PlansDrawer />
     </>
   );
 }

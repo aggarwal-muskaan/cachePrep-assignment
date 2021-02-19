@@ -41,7 +41,9 @@ export default function SideMenu({ courseId }) {
         ))}
       </div>
       <Link to="/checkout">
-        <button className="view-cart-button">View Cart</button>
+        <button className="view-cart-button" onClick={() => showDrawer(false)}>
+          View Cart
+        </button>
       </Link>
     </>
   );

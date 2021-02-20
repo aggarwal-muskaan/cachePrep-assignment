@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { cartContext, dispatchContext } from "../contexts/cart.context";
 import { toggleContext } from "../contexts/drawer.context";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Dialog from "@material-ui/core/Dialog";
 
 import plans from "../helpers/plans";
 import "../styles/CheckoutStyle.css";
@@ -13,6 +14,18 @@ export default function Cart() {
   const showDrawer = useContext(toggleContext);
   const currentProducts = useContext(cartContext);
   const dispatch = useContext(dispatchContext);
+
+  const [open, setOpen] = useState(false);
+
+  //opens Dialog
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  //closes Dialog
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleDelete = (id) => {
     dispatch({ type: "delete", id: id });
@@ -99,7 +112,12 @@ export default function Cart() {
               </tfoot>
             </table>
 
-            <button className="card-button checkout-button">Checkout</button>
+            <button
+              className="card-button checkout-button"
+              onClick={handleOpen}
+            >
+              Checkout
+            </button>
             <div className="congrats-text">
               <p>Congratulations!</p>
               <p className="saved-text">
@@ -107,6 +125,15 @@ export default function Cart() {
               </p>
             </div>
           </div>
+
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            <h2>🎉You are successfully enrolled.🎉</h2>
+          </Dialog>
 
           {/* side menu */}
           <PlansDrawer />
